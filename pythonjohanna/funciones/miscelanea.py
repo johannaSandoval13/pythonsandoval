@@ -26,8 +26,7 @@ def menorLista(lista):
         if num<Nmenor:
             Nmenor=num
     return Nmenor
-def OrdenALista(lista):
-    
+
 
 l1=llenarLista(10,20)
 print(l1)
@@ -35,3 +34,4 @@ print(sumaLista(l1))
 print(promedioLista(l1))
 print(mayorLista(l1))
 print(menorLista(l1))
+print(ordenALista(l1))
