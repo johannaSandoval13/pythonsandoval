@@ -24,11 +24,19 @@ for i in range (len(lista)):
         if i != u:
             if lista[i]==lista[u] and lista[i] not in moda:
                 moda.append(lista[i])
+
+prom=suma // len(lista) 
+
+desvi1=[]
+for n in range(tam):
+            resta=prom-num
+
 prom=suma / len(lista) 
 
 desvi1=[]
 for n in range(tam):
             resta=lista[n]-prom
+
             desvi1.append(resta)
 desvi2=[]
 for n in range(tam):
@@ -48,4 +56,5 @@ print("La moda es: ",moda)
 print("//Desviacion estandar//")
 print("La resta entre los numeros de la lista y el promedio es: ",desvi1)
 print("El cuadrado de las restas es: ", desvi2)
+print("La desviacion estandar es: ",raiz)
 print("La desviacion estandar es: ",raiz)
