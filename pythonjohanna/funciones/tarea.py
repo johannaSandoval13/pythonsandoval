@@ -18,33 +18,54 @@ def ordenascendente(lista):
     return lista
 
 
-numCuart=int(input("Ingrese el numero de cuartil a calcular="))
+numCuart=int(input("Ingrese el numero de cuartil a calcular(1 al 4)="))
 def calculaCuartil(lista):
     listaOrd = ordenascendente(lista[:]) 
     calcCuartil = int(numCuart * (len(listaOrd) + 1) / 4)
     return listaOrd[calcCuartil]
-
-
-numQuint=int(input("Ingrese el numero de quintil a calcular="))
+numQuint=int(input("Ingrese el numero de quintil a calcular(1 al 5)="))
 def calculaQuintil(lista):
     listaOrd = ordenascendente(lista[:]) 
     calcQuint = int(numQuint * (len(listaOrd) + 1) / 5)
     return listaOrd[calcQuint]
 
-def crearNuevaLista(lista, cuartil):
-    if numCuart != 1:
-        nuevaLista = lista[calculaCuartil:cuartil]
-    else:
-        nuevaLista = lista[:cuartil]
-        return nuevaLista
 
+def crearCuartil(lista, cuartil):
+    nuevoCuartil = lista[:cuartil]
+    return nuevoCuartil
+def crearQuintil(lista, quintil):
+    nuevoQuintil = lista[:quintil]
+    return nuevoQuintil
+
+
+def sumaCuartil(lista, cuartil):
+    sum=0
+    for x in cuartil:
+        sum+=x
+    return sum
+def promedioCuartil(lista, cuartil):
+    return sumaCuartil(lista, cuartil)/len(cuartil)
+
+
+def sumaQuintil(lista, quintil):
+    sum=0
+    for x in quintil:
+        sum+=x
+    return sum
+def promedioQuintil(lista, quintil):
+    return sumaQuintil(lista, quintil)/len(quintil)
 
 
 l1 = llenarLista(l1)
 print(l1)
 print("El tamaño de la lista es:", tam)
+
 print("El cuartil que se solicito está en la posición:", calculaCuartil(l1))
 cuartil = calculaCuartil(l1)
+cuartil = crearCuartil(l1, cuartil)
+print("El promedio de el cuartil solicitado es de:",promedioCuartil(l1, cuartil))
+
 print("El quintil que se solicito está en la posición:", calculaQuintil(l1))
-cuartil = crearNuevaLista(l1, cuartil)
-print("Nueva lista:", cuartil)
+quintil= calculaQuintil(l1)
+quintil = crearQuintil(l1, quintil)
+print("El promedio de el quintil solicitado es de:",promedioQuintil(l1, quintil))
