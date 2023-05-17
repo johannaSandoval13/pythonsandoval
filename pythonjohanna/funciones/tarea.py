@@ -17,13 +17,24 @@ def ordenascendente(lista):
                 lista[j] = aux
     return lista
 
+numCuart = int(input("Ingrese el numero de cuartil a calcular (1 al 4): "))
 
-numCuart=int(input("Ingrese el numero de cuartil a calcular(1 al 4)="))
+while numCuart > 4:
+    print("El número de cuartil debe estar entre 1 y 4.")
+    numCuart = int(input("Ingrese nuevamente el numero de cuartil a calcular (1 al 4): "))
+
 def calculaCuartil(lista):
-    listaOrd = ordenascendente(lista[:]) 
+    listaOrd = sorted(lista)
     calcCuartil = int(numCuart * (len(listaOrd) + 1) / 4)
     return listaOrd[calcCuartil]
+
+
 numQuint=int(input("Ingrese el numero de quintil a calcular(1 al 5)="))
+
+while numQuint > 5:
+    print("El número de quintil debe estar entre 1 y 5.")
+    numQuint = int(input("Ingrese nuevamente el numero de quintil a calcular (1 al 5): "))
+
 def calculaQuintil(lista):
     listaOrd = ordenascendente(lista[:]) 
     calcQuint = int(numQuint * (len(listaOrd) + 1) / 5)
