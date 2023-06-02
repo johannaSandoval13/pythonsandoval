@@ -1,7 +1,8 @@
 class Persona:
-    def __init__(self,nombre,documento):
+    def __init__(self,nombre,documento, cursos):
         self.__nombre=nombre
         self.__documento=documento
+        self.__cursos=[]
         
     def getNombre(self):
         return self.__nombre
@@ -12,11 +13,19 @@ class Persona:
         return self.__documento
     def setDocumento(self,documento):
         self.__documento=documento
-    
-p=Persona("Timmy",678)
-print(p.getNombre())
-print(p.getDocumento())
+        
+    def añadeCursos(self,cursos):
+        while c != "salir":
+            c=input("Añada los cursos a los que pertenece, escriba 'salir' para finalizar: ")
+            c.append(cursos)
+        return(cursos)
+    def muestraDatos(self):
+        print("Los datos de la persona son: ")
+        return self.__nombre, self.__documento, self.__cursos
+        
 
-q=Persona("Billy",910)
-print(q.getNombre())
-print(q.getDocumento())
+p=Persona("Timmy",678,2)
+print(p.muestraDatos())
+
+q=Persona("Billy",910,1)
+print(q.muestraDatos())
