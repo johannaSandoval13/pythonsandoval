@@ -41,7 +41,7 @@ class Persona:
             if m == "salir":
                 break
             index = int(m)
-            nvCurso = input("Ingrese el nuevo curso: ")
+            nvCurso = input("Ingrese el curso nuevo: ")
             self.__cursos[index] = nvCurso
 
 
