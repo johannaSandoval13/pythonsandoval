@@ -13,19 +13,25 @@ class Persona:
         return self.__documento
     def setDocumento(self,documento):
         self.__documento=documento
-        
-    def añadeCursos(self,cursos):
-        while c != "salir":
-            c=input("Añada los cursos a los que pertenece, escriba 'salir' para finalizar: ")
-            c.append(cursos)
-        return(cursos)
+
+    def añadeCursos(self):
+        cursos = []
+        while True:
+            c = input("Añada los cursos a los que pertenece, escriba 'salir' para finalizar: ")
+            if c.lower() == "salir":
+                break
+            cursos.append(c)
+
+        self.__cursos = cursos
     def muestraDatos(self):
         print("Los datos de la persona son: ")
-        return self.__nombre, self.__documento, self.__cursos
+        return ("-Nombre:", self.__nombre, "-Documento:", self.__documento, "-Cursos:", self.__cursos)
         
 
-p=Persona("Timmy",678,2)
+p = Persona("Timmy", 678, [2])
+p.añadeCursos()
 print(p.muestraDatos())
 
-q=Persona("Billy",910,1)
+q = Persona("Billy", 910, [1])
+q.añadeCursos()
 print(q.muestraDatos())
