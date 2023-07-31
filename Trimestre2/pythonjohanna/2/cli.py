@@ -3,4 +3,3 @@ class Cliente:
         self.__nombre = nombre
         self.__telefono = telefono
         self.__tipo=tipo
-        
