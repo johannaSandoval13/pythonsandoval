@@ -1,4 +1,0 @@
-Nombre: johanna
-Celular: 3186341733
-Edad: 17
-Correo: johanna.sandoval634@gmail.com
